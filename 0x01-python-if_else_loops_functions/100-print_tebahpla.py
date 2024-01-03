@@ -5,7 +5,7 @@ def print_tebahpla():
             a = abs(i) - 32
         else:
             a = abs(i)
-        print(chr(a), end="")
+        print("{}".format(chr(a)), end="")
 
 
 print_tebahpla()
