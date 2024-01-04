@@ -11,7 +11,7 @@ def my_calculator():
     if arg_len != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
-    
+
     a = arg_list[1]
     operator = arg_list[2]
     b = arg_list[3]
