@@ -19,5 +19,6 @@ def print_args():
                 continue
             print("{}: {}".format(index, argument))
 
+
 if __name__ == "__main__":
-	print_args()
+    print_args()
