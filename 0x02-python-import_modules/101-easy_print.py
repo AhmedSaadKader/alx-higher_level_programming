@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-exit("#pythoniscool")
+open(__file__, 'w').write("#pythoniscool\n")
