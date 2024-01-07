@@ -35,7 +35,7 @@ int is_palindrome(listint_t **head)
 		first = *head;
 		l = 0;
 		f = 0;
-		while ((l != ((total_len - half_point) - (i + 1))) & (last->next != NULL))
+		while ((l != ((total_len - half_point) - (i + 1))) && (last->next != NULL))
 		{
 			last = last->next;
 			l++;
