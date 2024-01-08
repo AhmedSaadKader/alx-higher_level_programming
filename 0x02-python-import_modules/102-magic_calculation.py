@@ -1,11 +1,4 @@
 #!/usr/bin/python3
-import dis
-
-def magic_calculation_102(a, b):
-	add = a + b
-	sub = a - b
-	return (add, sub)
-
 def magic_calculation(a, b):
 	from magic_calculation_102 import add, sub
 	if a < b:
@@ -16,6 +9,3 @@ def magic_calculation(a, b):
 	else:
 		return (sub(a, b))
 
-dis.dis(magic_calculation)
-x = magic_calculation.__code__
-print(x.co_consts)
