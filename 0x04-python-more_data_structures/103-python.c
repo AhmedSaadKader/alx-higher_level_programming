@@ -9,7 +9,7 @@
 void print_python_bytes(PyObject *p)
 {
 	PyBytesObject *b;
-	int i = 0;
+	long unsigned int i = 0;
 
 	b = (PyBytesObject *)p;
 	printf("[.] bytes object info\n");
