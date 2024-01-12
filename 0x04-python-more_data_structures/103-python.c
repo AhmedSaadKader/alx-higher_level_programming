@@ -18,12 +18,12 @@ void print_python_bytes(PyObject *p)
 		printf("  [ERROR] Invalid Bytes Object\n");
 		return;
 	}
-	printf("size: %ld\n", b->ob_base.ob_size);
-	printf("trying string: %s\n", b->ob_sval);
+	printf("  size: %ld\n", b->ob_base.ob_size);
+	printf("  trying string: %s\n", b->ob_sval);
 	if (strlen(b->ob_sval) > 10)
-		printf("first 10 bytes = ");
+		printf("  first 10 bytes = ");
 	else
-		printf("first %ld bytes = ", strlen(b->ob_sval) + 1);
+		printf("  first %ld bytes = ", strlen(b->ob_sval) + 1);
 	while (i <= strlen(b->ob_sval) && i < 10)
 	{
 		printf("%02hhx ", b->ob_sval[i]);
