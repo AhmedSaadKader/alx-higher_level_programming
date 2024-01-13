@@ -25,7 +25,7 @@ void print_python_bytes(PyObject *p)
 		bytes_no = 10;
 	else
 		bytes_no = size + 1;
-	printf("  first %ld bytes = ", bytes_no);
+	printf("  first %ld bytes: ", bytes_no);
 	while (i <= bytes_no)
 	{
 		printf("%02hhx ", b->ob_sval[i]);
