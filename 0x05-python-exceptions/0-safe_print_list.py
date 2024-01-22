@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 
 def safe_print_list(my_list=[], x=0):
-    l = 0
+    print_counter = 0
     for i in range(x):
         try:
             print("{:d}".format(my_list[i]), end="")
-            l += 1
+            print_counter += 1
         except IndexError:
             pass
     print()
-    return l
+    return print_counter
