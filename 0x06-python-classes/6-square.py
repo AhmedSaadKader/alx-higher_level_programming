@@ -47,5 +47,9 @@ class Square:
         else:
             for _ in range(self.__position[1]):
                 print()
-            for _ in range(self.__size):
-                print(" " * self.__position[0] + "#" * self.__size)
+            for height in range(self.__size):
+                for _ in range(self.__position[0]):
+                    print(" ", end="")
+                for width in range(self.__size):
+                    print("#", end="")
+                print()
