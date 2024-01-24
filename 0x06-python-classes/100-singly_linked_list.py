@@ -41,10 +41,9 @@ class SinglyLinkedList:
     def __str__(self) -> str:
         list_string = ""
         current = self.__head
-        while current.next_node is not None:
+        while current is not None:
             list_string += str(current.data) + "\n"
             current = current.next_node
-        list_string += str(current.data)
         return list_string
 
     def sorted_insert(self, value):
