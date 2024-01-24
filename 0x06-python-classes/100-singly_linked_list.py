@@ -54,7 +54,9 @@ class SinglyLinkedList:
 
         current = self.__head
         while (current.next_node is not None):
-            if current.data < value < current.next_node.data:
+            if (current.data
+                == value) or (
+                    current.data < value < current.next_node.data):
                 new_node = Node(value, current.next_node)
                 current.next_node = new_node
 
