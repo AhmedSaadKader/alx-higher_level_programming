@@ -20,7 +20,8 @@ class Square:
                     print_string += " "
                 for width in range(self.__size):
                     print_string += "#"
-                print_string += "\n"
+                if height != self.__size - 1:
+                    print_string += "\n"
             return print_string
 
     @property
