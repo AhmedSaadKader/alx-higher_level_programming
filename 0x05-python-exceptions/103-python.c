@@ -49,12 +49,12 @@ void print_python_float(PyObject *p)
 	PyFloatObject *fl;
 
 	fl = (PyFloatObject *)p;
+	printf("[.] float object info\n");
 	if (!PyFloat_Check(fl))
 	{
 		printf("  [ERROR] Invalid Float Object\n");
 		return;
 	}
-	printf("[.] float object info\n");
 	printf("  value: %s\n",
 	PyOS_double_to_string(fl->ob_fval, 'r', 0, Py_DTSF_ADD_DOT_0, NULL));
 }
