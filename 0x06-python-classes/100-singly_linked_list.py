@@ -39,6 +39,8 @@ class SinglyLinkedList:
         self.__head = None
 
     def __str__(self) -> str:
+        if self.__head is None:
+            return ""
         list_string = ""
         current = self.__head
         while current.next_node is not None:
