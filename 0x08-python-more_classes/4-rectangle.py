@@ -53,3 +53,6 @@ class Rectangle:
             if _ < self.height - 1:
                 rect_str += "\n"
         return rect_str
+
+    def __repr__(self):
+        return f"Rectangle({self.width}, {self.height})"
