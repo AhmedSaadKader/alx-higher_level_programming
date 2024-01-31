@@ -66,3 +66,9 @@ This module contains only one function called
     Traceback (most recent call last):
         ...
     TypeError: Each row of the matrix must have the same size
+
+    >>>	matrix = [[2, 3, 4], [2, 3]]
+    >>> print(matrix_divided(matrix))
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
