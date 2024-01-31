@@ -22,7 +22,9 @@ This module has one function only called ``add_integer()``.
 	3
 
 	>>> add_integer(float("inf"), 2.3)
-	89
+	Traceback (most recent call last):
+		...
+	OverflowError: cannot convert float infinity to integer
 
 	>>> add_integer(4, "School")
 	Traceback (most recent call last):
