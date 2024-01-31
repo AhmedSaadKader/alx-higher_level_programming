@@ -11,8 +11,9 @@ class LockedClass:
     user from dynamically creating new instance attributes,
     except if the new instance attribute is called first_name
     """
+    __slots__ = ('first_name',)
     def __init__(self):
-        pass
+        self.first_name = None
 
     def __setattr__(self, name, value):
         if name == "first_name":
