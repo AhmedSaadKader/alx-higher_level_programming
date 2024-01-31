@@ -15,8 +15,17 @@ class TestMaxInteger(unittest.TestCase):
     def test_list_integers(self):
         self.assertEqual(max_integer([1, 3, 4, 2]), 4)
 
+    def test_list_integers_one_element(self):
+        self.assertEqual(max_integer([1]), 1)
+
+    def test_list_integers_empty(self):
+        self.assertEqual(max_integer([]), None)
+
     def test_list_integers_different_order(self):
         self.assertEqual(max_integer([1, 2, 3, 4]), 4)
+
+    def test_list_integers_max_beginning(self):
+        self.assertEqual(max_integer([4, 2, 3, 1]), 4)
 
     def test_list_float_different_order(self):
         self.assertEqual(max_integer([2.0, 4.0, 3.0, 1.0]), 4.0)
