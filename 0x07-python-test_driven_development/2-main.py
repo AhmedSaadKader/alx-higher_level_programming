@@ -35,3 +35,9 @@ try:
     print(matrix_divided(matrix, 3))
 except Exception as e:
     print("different sized rows: ", e)
+
+try:
+    matrix = [[2, 3], [2, 3]]
+    print(matrix_divided(matrix, float("inf")))
+except Exception as e:
+    print("different sized rows: ", e)
