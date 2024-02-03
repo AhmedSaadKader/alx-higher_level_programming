@@ -10,7 +10,6 @@
 void print_python_string(PyObject *p)
 {
 	PyUnicodeObject *str;
-	unsigned long int length;
 
 	printf("[.] string object info\n");
 	if (!PyUnicode_Check(p))
