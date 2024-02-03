@@ -22,5 +22,5 @@ void print_python_string(PyObject *p)
 	str = (PyUnicodeObject *)p;
 	printf("  type: %s\n", Py_TYPE(str)->tp_name);
 	printf("  length: %ld\n", PyUnicode_GET_LENGTH(str));
-	printf("  value: %ls\n", PyUnicode_AsWideCharString(p, NULL));
+	printf("  value: %S\n", PyUnicode_AsWideCharString(p, NULL));
 }
