@@ -51,3 +51,8 @@ base_geometry module
 	Traceback (most recent call last):
 		...
 	ValueError: distance must be greater than 0
+
+	>>> base_geometry.integer_validator("distance")
+	Traceback (most recent call last):
+		...
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
