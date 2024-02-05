@@ -8,6 +8,11 @@ base_geometry module
 
 	>>> base_geometry = BaseGeometry()
 
+	>>> base_geometry.area()
+	Traceback (most recent call last):
+		...
+	Exception: area() is not implemented
+	
 	>>> base_geometry.integer_validator("my_int", 12)
 
 	>>> base_geometry.integer_validator("width", 89)
