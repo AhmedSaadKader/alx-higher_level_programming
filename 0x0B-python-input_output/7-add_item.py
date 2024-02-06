@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """a script that add all arguments to a python list"""
 import sys
-from pathlib import Path
 
 
 save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
