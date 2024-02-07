@@ -32,6 +32,6 @@ class Student:
         Args:
             json (dict): dictionary containing the attributes
         """
-        self.first_name = json['first_name']
-        self.last_name = json['last_name']
-        self.age = json['age']
+        self.first_name = json.get('first_name', None)
+        self.last_name = json.get('last_name', None)
+        self.age = json.get('age', None)
