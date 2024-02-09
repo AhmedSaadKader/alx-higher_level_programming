@@ -1,0 +1,14 @@
+====================
+The `my_list` module
+====================
+
+This module contains my_list function that inherits from list class - 
+public instance method: def print_sorted(self) that prints the list but
+sorted. All the elements of the list will be of type int
+
+    >>> MyList = __import__("1-my_list").MyList
+
+    >>> my_list = MyList()
+
+    >>> bool(__import__("1-my_list").MyList.__doc__)
+    True
