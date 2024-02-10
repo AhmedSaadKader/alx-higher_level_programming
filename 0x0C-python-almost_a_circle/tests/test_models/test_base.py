@@ -7,6 +7,12 @@ class TestBase(unittest.TestCase):
 		self.base2 = Base()
 		self.base3 = Base(5)
 		self.base4 = Base()
+	
+	def tearDown(self):
+		del self.base1
+		del self.base2
+		del self.base3
+		del self.base4
 
 	def test_id(self):
 		self.assertEqual(self.base1.id, 1)
