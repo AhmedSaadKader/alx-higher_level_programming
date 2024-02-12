@@ -2,6 +2,7 @@
 """Rectangle class - inherits from base - creates a new rectangle"""
 from models.base import Base
 
+
 class Rectangle(Base):
 	"""Creates a new rectangle
 	
@@ -79,5 +80,22 @@ class Rectangle(Base):
 			print("#" * self.width)
 
 	def __str__(self):
-		return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
-	
+		if self.__class__.__name__ == "Square":
+			width_height = f"{self.width}"
+		else:
+			width_height = f"{self.width}/{self.height}"
+		return f"[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y} - {width_height}"
+
+	def update(self, *args, **kwargs):
+		# for i in range(len(args)):
+		# 	attr = list(self.__dict__)[i]
+		# 	setattr(self, attr, args[i])
+		if args and len(args) != 0:
+			attributes = ['id', 'width', 'height', 'x', 'y']
+			for i, arg in enumerate(args):
+				setattr(self, attributes[i], arg)
+			return self
+		elif kwargs and len(kwargs) > 0:
+			for key, value in kwargs.items():
+				setattr(self, key, value)
+			return self
