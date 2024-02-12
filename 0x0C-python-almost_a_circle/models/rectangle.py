@@ -111,8 +111,9 @@ class Rectangle(Base):
             width_height = f"{self.width}"
         else:
             width_height = f"{self.width}/{self.height}"
-        return f"[{self.__class__.__name__}] ({self.id})\
-              {self.x}/{self.y} - {width_height}"
+        return (
+            f"[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y} - {width_height}"
+        )
 
     def update(self, *args, **kwargs):
         """updates rectangle attributes
