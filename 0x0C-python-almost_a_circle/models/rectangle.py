@@ -5,7 +5,7 @@ from models.base import Base
 
 class Rectangle(Base):
     """Creates a new rectangle
-    
+
     Attributes:
     width: width of the rectangle
     height: height of the rectangle
@@ -111,7 +111,8 @@ class Rectangle(Base):
             width_height = f"{self.width}"
         else:
             width_height = f"{self.width}/{self.height}"
-        return f"[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y} - {width_height}"
+        return f"[{self.__class__.__name__}] ({self.id})\
+              {self.x}/{self.y} - {width_height}"
 
     def update(self, *args, **kwargs):
         """updates rectangle attributes

@@ -36,4 +36,5 @@ class Base:
             list_objs (list): list of instances who inherits of Base
         """
         with open(f"{cls.__name__}.json", "w", encoding="utf-8") as f:
-            f.write(cls.to_json_string([ls.to_dictionary() for ls in list_objs]))
+            f.write(cls.to_json_string([ls.to_dictionary()
+                                        for ls in list_objs]))
