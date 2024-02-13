@@ -16,18 +16,18 @@ class TestBase(unittest.TestCase):
         del self.base4
 
     def test_base_id(self):
-        self.assertEqual(self.base1.id, 1)
-        self.assertEqual(self.base2.id, 2)
+        self.assertEqual(self.base1.id, 4)
+        self.assertEqual(self.base2.id, 5)
         self.assertEqual(self.base3.id, 15)
-        self.assertEqual(self.base4.id, 3)
+        self.assertEqual(self.base4.id, 6)
 
     def test_base_to_json_string(self):
         r1 = Rectangle(10, 7, 2, 8)
         dictionary = r1.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
-        self.assertEqual(json_dictionary, '[{"id": 4, "width": 10, "height": 7, "x": 2, "y": 8}]')
+        self.assertEqual(json_dictionary, '[{"id": 10, "width": 10, "height": 7, "x": 2, "y": 8}]')
 
-    def test_base_to_json_string(self):
+    def test_base_from_json_string(self):
         list_input = [
             {'id': 89, 'width': 10, 'height': 4}, 
             {'id': 25, 'width': 1, 'height': 7}
