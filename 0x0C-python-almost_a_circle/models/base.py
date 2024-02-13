@@ -57,7 +57,21 @@ class Base:
     def create(cls, **dictionary):
         """returns an instance with all attributes already set
         """
-        if dictionary and dictionary != {}:
-            new_instance = cls(2, 2)
-            updated = new_instance.update(**dictionary)
-            return (updated)
+        new_instance = cls(2, 2)
+        updated = new_instance.update(**dictionary)
+        return (updated)
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances
+        """
+        filename = f"{cls.__name__}.json"
+        if not filename:
+            return []
+        with open(filename) as f:
+            list_input = f.read()
+            from_json = Base.from_json_string(list_input)
+            list_output = []
+            for inst in from_json:
+                list_output.append(cls.create(**inst))
+            return list_output
