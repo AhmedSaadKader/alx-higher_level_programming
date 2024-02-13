@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Base for all other classes"""
 import json
+import csv
 
 
 class Base:
@@ -68,10 +69,25 @@ class Base:
         filename = f"{cls.__name__}.json"
         if not filename:
             return []
-        with open(filename) as f:
+        with open(filename, encoding="utf-8") as f:
             list_input = f.read()
             from_json = Base.from_json_string(list_input)
             list_output = []
             for inst in from_json:
                 list_output.append(cls.create(**inst))
             return list_output
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """saves json string to csv file
+
+        Args:
+            list_objs (list): list of objects
+        """
+        print(li for li in list_objs)
+        with open(f"{cls.__name__}.csv", "w", encoding="utf-8", newline='') as f:
+            if list_objs is None:
+                f.write([])
+            else:
+                outputWriter = csv.writer(f)
+                outputWriter.writerow('x')
