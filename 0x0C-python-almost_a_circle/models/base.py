@@ -3,6 +3,8 @@
 import json
 import csv
 import os
+from turtle import Turtle
+import turtle
 
 
 class Base:
@@ -112,33 +114,38 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
-        from turtle import Turtle
-        from random import random
+        """draws an instance
+
+        Args:
+            list_rectangles (list): list of rectangles
+            list_squares (list): list of squares
+        """
 
         t = Turtle()
         t.screen.title("Draw")
-        t.screen.bgcolor("orange")
+        t.color('blue')
         for rectangle in list_rectangles:
             width = rectangle.width
             height = rectangle.height
             print(rectangle)
+            t.penup()
+            t.goto(rectangle.x, rectangle.y)
+            t.pendown()
             t.width(5)
-            t.fd(width)
-            t.rt(90)
-            t.fd(height)
-            t.rt(90)
-            t.fd(width)
-            t.rt(90)
-            t.fd(height)
+            for _ in range(2):
+                t.fd(width)
+                t.rt(90)
+                t.fd(height)
+                t.rt(90)
+
+        t.color('red')
         for square in list_squares:
-            width = square.width
-            height = square.height
+            size = square.size
             print(square)
-            t.fd(width)
-            t.rt(90)
-            t.fd(height)
-            t.rt(90)
-            t.fd(width)
-            t.rt(90)
-            t.fd(height)
-        t.screen.mainloop()
+            t.penup()
+            t.goto(square.x * -1, square.y * -1)
+            t.pendown()
+            for _ in range(4):
+                t.fd(size)
+                t.lt(90)
+        turtle.done()
