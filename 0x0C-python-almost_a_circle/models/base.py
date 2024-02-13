@@ -109,3 +109,36 @@ class Base:
                                              for key, value in row.items()})
                 list_output.append(new_instance)
             return list_output
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        from turtle import Turtle
+        from random import random
+
+        t = Turtle()
+        t.screen.title("Draw")
+        t.screen.bgcolor("orange")
+        for rectangle in list_rectangles:
+            width = rectangle.width
+            height = rectangle.height
+            print(rectangle)
+            t.width(5)
+            t.fd(width)
+            t.rt(90)
+            t.fd(height)
+            t.rt(90)
+            t.fd(width)
+            t.rt(90)
+            t.fd(height)
+        for square in list_squares:
+            width = square.width
+            height = square.height
+            print(square)
+            t.fd(width)
+            t.rt(90)
+            t.fd(height)
+            t.rt(90)
+            t.fd(width)
+            t.rt(90)
+            t.fd(height)
+        t.screen.mainloop()
