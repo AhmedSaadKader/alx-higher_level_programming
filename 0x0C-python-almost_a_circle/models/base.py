@@ -85,11 +85,27 @@ class Base:
         Args:
             list_objs (list): list of objects
         """
-        print(li for li in list_objs)
         filename = f"{cls.__name__}.csv"
         with open(filename, "w", encoding="utf-8", newline='') as f:
             if list_objs is None:
                 f.write([])
             else:
-                outputWriter = csv.writer(f)
-                outputWriter.writerow('x')
+                outputWriter = csv.DictWriter(
+                    f, list_objs[0].to_dictionary().keys())
+                outputWriter.writeheader()
+                for li in list_objs:
+                    outputWriter.writerow(li.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """loads from csv file
+        """
+        filename = f"{cls.__name__}.csv"
+        list_output = []
+        with open(filename, encoding="utf-8", newline='') as f:
+            outputReader = csv.DictReader(f)
+            for row in outputReader:
+                new_instance = cls.create(**{key: int(value)
+                                             for key, value in row.items()})
+                list_output.append(new_instance)
+            return list_output
