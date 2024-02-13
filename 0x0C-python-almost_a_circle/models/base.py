@@ -2,6 +2,7 @@
 """Base for all other classes"""
 import json
 import csv
+import os
 
 
 class Base:
@@ -67,7 +68,7 @@ class Base:
         """returns a list of instances
         """
         filename = f"{cls.__name__}.json"
-        if not filename:
+        if not os.path.exists(filename):
             return []
         with open(filename, encoding="utf-8") as f:
             list_input = f.read()
