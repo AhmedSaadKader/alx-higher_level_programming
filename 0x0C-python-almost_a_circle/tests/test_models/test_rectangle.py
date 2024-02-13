@@ -23,10 +23,10 @@ class TestRectangle(unittest.TestCase):
 		self.assertIsInstance(self.rectangle4, Rectangle)
 
 	def test_rectangle_id(self):
-		self.assertEqual(self.rectangle1.id, 8)
-		self.assertEqual(self.rectangle2.id, 9)
+		self.assertEqual(self.rectangle1.id, 7)
+		self.assertEqual(self.rectangle2.id, 8)
 		self.assertEqual(self.rectangle3.id, 12)
-		self.assertEqual(self.rectangle4.id, 10)
+		self.assertEqual(self.rectangle4.id, 9)
 	
 	def test_rectangle_width(self):
 		self.assertEqual(self.rectangle1.width, 3)
@@ -106,10 +106,10 @@ class TestRectangle(unittest.TestCase):
 		self.assertEqual(self.capture_stdout(self.rectangle3, "display"), "##\n##\n")
 
 	def test_rectangle_str_method(self):
-		self.assertEqual(self.capture_stdout(self.rectangle1, "print"), "[Rectangle] (8) 0/0 - 3/2\n")
-		self.assertEqual(self.capture_stdout(self.rectangle2, "print"), "[Rectangle] (9) 0/0 - 1/4\n")
+		self.assertEqual(self.capture_stdout(self.rectangle1, "print"), "[Rectangle] (7) 0/0 - 3/2\n")
+		self.assertEqual(self.capture_stdout(self.rectangle2, "print"), "[Rectangle] (8) 0/0 - 1/4\n")
 		self.assertEqual(self.capture_stdout(self.rectangle3, "print"), "[Rectangle] (12) 0/0 - 2/2\n")
-		self.assertEqual(self.capture_stdout(self.rectangle4, "print"), "[Rectangle] (10) 5/7 - 3/1\n")
+		self.assertEqual(self.capture_stdout(self.rectangle4, "print"), "[Rectangle] (9) 5/7 - 3/1\n")
 
 	def test_rectangle_display_with_x_y(self):
 		self.assertEqual(self.capture_stdout(self.rectangle4, "display"), "\n\n\n\n\n\n\n     ###\n")
@@ -121,7 +121,7 @@ class TestRectangle(unittest.TestCase):
 
 	def test_rectangle_update_args(self):
 		print(self.r_update)
-		self.assertEqual(self.capture_stdout(self.r_update, "print"), "[Rectangle] (11) 10/10 - 10/10\n")
+		self.assertEqual(self.capture_stdout(self.r_update, "print"), "[Rectangle] (10) 10/10 - 10/10\n")
 		self.assertEqual(self.capture_update(self.r_update.update(89)), "[Rectangle] (89) 10/10 - 10/10\n") 
 		self.assertEqual(self.capture_update(self.r_update.update(89, 2)), "[Rectangle] (89) 10/10 - 2/10\n") 
 		self.assertEqual(self.capture_update(self.r_update.update(89, 2, 3)), "[Rectangle] (89) 10/10 - 2/3\n") 
@@ -130,7 +130,7 @@ class TestRectangle(unittest.TestCase):
 
 	def test_rectangle_update_kwargs(self):
 		print(self.r_update)
-		self.assertEqual(self.capture_stdout(self.r_upd_kwargs, "print"), "[Rectangle] (12) 5/5 - 5/5\n")
+		self.assertEqual(self.capture_stdout(self.r_upd_kwargs, "print"), "[Rectangle] (11) 5/5 - 5/5\n")
 		self.assertEqual(self.capture_update(self.r_upd_kwargs.update(id=89)), "[Rectangle] (89) 5/5 - 5/5\n") 
 		self.assertEqual(self.capture_update(self.r_upd_kwargs.update(id=89, width=2)), "[Rectangle] (89) 5/5 - 2/5\n") 
 		self.assertEqual(self.capture_update(self.r_upd_kwargs.update(id=89, width=2, height=3)), "[Rectangle] (89) 5/5 - 2/3\n") 
