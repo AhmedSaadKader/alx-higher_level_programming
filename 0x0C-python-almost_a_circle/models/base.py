@@ -85,7 +85,8 @@ class Base:
             list_objs (list): list of objects
         """
         print(li for li in list_objs)
-        with open(f"{cls.__name__}.csv", "w", encoding="utf-8", newline='') as f:
+        filename = f"{cls.__name__}.csv"
+        with open(filename, "w", encoding="utf-8", newline='') as f:
             if list_objs is None:
                 f.write([])
             else:
