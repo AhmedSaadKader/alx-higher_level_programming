@@ -1,6 +1,6 @@
 -- uses the database hbtn_0d_tvshows to list all genres
 -- of the show Dexter
-SELECT tv_genres.name
+SELECT name
 FROM tv_genres
 LEFT JOIN tv_show_genres 
 ON tv_show_genres.id = tv_genres.id
