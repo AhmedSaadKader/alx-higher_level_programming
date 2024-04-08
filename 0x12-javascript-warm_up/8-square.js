@@ -4,7 +4,7 @@ const number = parseInt(argv[2]);
 if (!number) console.log('Missing size');
 else {
   for (let i = 0; i < number; i++) {
-    row = '';
+    let row = '';
     for (let l = 0; l < number; l++) {
       row += 'X';
     }
