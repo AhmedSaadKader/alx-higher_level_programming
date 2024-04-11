@@ -19,16 +19,17 @@ if __name__ == '__main__':
         cur.execute("""SELECT c.name FROM cities AS c
                     INNER JOIN states AS s
                     ON state_id = s.id
-                    WHERE s.name LIKE BINARY %s
-                    ORDER BY c.id""", (str(state_name), ))
+                    WHERE s.name = %s
+                    ORDER BY c.id""", (state_name, ))
         rows = cur.fetchall()
     except MySQLdb.Error as e:
         try:
             print(f"MySQL Error [{e.args[0]}]: {e.args[1]}")
         except IndexError:
             print(f"MySQL Error: {str(e)}")
-    for row_index in range(len(rows) - 1):
-        print(rows[row_index][0], end=', ')
-    print(rows[len(rows) - 1][0])
+    cities = []
+    for row in rows:
+        cities.append(row[0])
+    print(*cities, sep=", ")
     cur.close()
     db.close()
