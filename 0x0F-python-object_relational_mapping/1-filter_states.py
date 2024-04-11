@@ -15,7 +15,7 @@ if __name__ == '__main__':
         )
     cur = db.cursor()
     try:
-        cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
+        cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id")
         rows = cur.fetchall()
     except MySQLdb.Error as e:
         try:
