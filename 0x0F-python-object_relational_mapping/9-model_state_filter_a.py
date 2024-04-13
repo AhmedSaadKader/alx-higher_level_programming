@@ -14,8 +14,8 @@ if __name__ == '__main__':
         )
     Base.metadata.create_all(engine)
     with engine.connect() as con:
-        s = select(State).order_by(State.id)
-        .where(text("name LIKE BINARY '%a%'"))
+        s = select(State).order_by(State.id).where(
+            text("name LIKE BINARY '%a%'"))
         result = con.execute(s)
         rows = result.fetchall()
         if not rows:
