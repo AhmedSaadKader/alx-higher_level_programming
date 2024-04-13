@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """This module creates a model state
 """
 from sqlalchemy import Column, Integer, String
