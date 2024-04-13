@@ -17,4 +17,4 @@ if __name__ == "__main__":
         s = select(State).order_by('id')
         result = con.execute(s)
         for row in result.fetchall():
-            print(row)
+            print('{}: {}'.format(row.id, row.name))
