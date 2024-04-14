@@ -6,6 +6,7 @@ import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from relationship_state import Base, State
+from relationship_city import City
 
 
 if __name__ == '__main__':
@@ -16,9 +17,7 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    usa = session.query(State)
+    usa = session.query(City, State).filter(State.id == City.state_id)
     print(usa)
-    for state in usa:
-        print('{}: {}'.format(state.id, state.name))
-        for city in state.cities:
-            print('\t{}: {}'.format(city.id, city.name))
+    for item in usa:
+        print('{}: {} -> {}'.format(item[0].id, item[0].name, item[1].name))
