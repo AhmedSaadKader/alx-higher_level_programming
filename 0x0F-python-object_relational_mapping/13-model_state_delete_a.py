@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-""" A script that changes the name of a State object from the database
-hbtn_0e_6_usa
+""" Script that deletes all State with a name containing the letter a
+from the database hbtn_0e_6_usa
 """
 import sys
 from sqlalchemy import create_engine
@@ -16,6 +16,7 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    new_instance = session.query(State).filter_by(id=2).first()
-    new_instance.name = 'New Mexico'
+    s = session.query(State).filter(State.name.like('%a%'))
+    for item in s:
+        session.delete(item)
     session.commit()
