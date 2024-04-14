@@ -18,6 +18,5 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
     usa = session.query(City, State).filter(State.id == City.state_id)
-    print(usa)
     for item in usa:
         print('{}: {} -> {}'.format(item[0].id, item[0].name, item[1].name))
