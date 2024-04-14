@@ -18,7 +18,5 @@ if __name__ == '__main__':
             State.name.like('%a%'))
         result = con.execute(s)
         rows = result.fetchall()
-        if not rows:
-            print("Nothing")
         for row in rows:
             print('{}: {}'.format(row.id, row.name))
