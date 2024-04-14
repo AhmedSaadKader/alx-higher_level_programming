@@ -3,7 +3,7 @@
 the database hbtn_0e_6_usa
 """
 import sys
-from sqlalchemy import select, create_engine, text
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
@@ -17,7 +17,5 @@ if __name__ == '__main__':
     Session = sessionmaker()
     Session.configure(bind=engine)
     session = Session()
-    s = session.query(State).order_by(State.id).filter(
-        State.name.like('%a%'))
-    for row in s:
-        print('{}: {}'.format(row.id, row.name))
+    for instance in session.query(State).filter(State.name.like('%a%')):
+        print(instance.id, instance.name, sep=": ")
